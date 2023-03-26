@@ -7,11 +7,6 @@ const StyledGlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', Helvetica, sans-serif;
   }
 
-  body {
-    
-    
-  }
-
   #root {
     display: flex;
     flex-wrap: wrap;
@@ -20,15 +15,18 @@ const StyledGlobalStyle = createGlobalStyle`
     max-width: 1240px;
   }
 
+  footer svg path {
+    fill: #FFF
+  }
+
+  .copyright {
+    color: #FFF
+  }
+
   @media (max-width: 480px) {
     body {
     }
   }
-
-  a.current {
-    text-decoration: underline
-  }
-  
 `
 
 function GlobalStyle() {

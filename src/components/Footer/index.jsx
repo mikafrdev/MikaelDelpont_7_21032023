@@ -1,22 +1,24 @@
+import React from 'react'
+import Logo from '../../components/Logo'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 
 const FooterContainer = styled.footer`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
   justify-content: center;
   width: 100%;
   padding-top: 60px;
   background-color: ${colors.backgroundFooter};
 `
 
-function Footer() {
+export default function Footer() {
   return (
     <FooterContainer>
-      © 2020 Kasa. All rights reserved
+      <Logo />
+      <div className="copyright">© 2020 Kasa. All rights reserved</div>
     </FooterContainer>
   )
 }
-
-export default Footer
