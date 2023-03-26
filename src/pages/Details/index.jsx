@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 export default function Details() {
     const { id } = useParams() 
     return (
-        <nav>
+        <div>
             <Link to="/">Details {id}</Link>
-        </nav>
+        </div>
     )
 }

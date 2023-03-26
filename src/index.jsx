@@ -7,21 +7,25 @@ import About from './pages/About'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './components/Error'
+import GlobalStyle from './utils/style/GlobalStyle'
 //import GlobalStyle from './utils/style/GlobalStyle'
 //import { ThemeProvider, SurveyProvider } from './utils/context'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details/:id" element={<Details />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/footer" Component={Footer} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <GlobalStyle />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
     </Router>
   </React.StrictMode>
 );

@@ -1,16 +1,15 @@
 //import { getDefaultNormalizer } from "@testing-library/react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import logo from '../../assets/logo.svg'
 
-const NavContainer = styled.nav`
+const HeaderContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 30px;
-    padding-left: 100px;
+    width: 100%;
 `
 
 const LogoContainer = styled.div`
@@ -18,41 +17,45 @@ const LogoContainer = styled.div`
 `
 
 const HomeLogo = styled.img`
-    height: 68px;
+    max-width: 37vw;
+    max-height: 68px;
 `
 
 const LinkContainer = styled.div`
     display: flex;
 `
 
-const StyledLink = styled(Link)`
-  padding: 10px 15px;
-  color: #FF6060;
-  text-decoration: none;
-  font-size: 24px;
-  text-align: center;
-  ${(props) =>
-    props.$isFullLink &&
-    `color: white; 
-    border-radius: 30px; 
-    background-color: ${colors.primary};`}
+const StyledLink = styled(NavLink)`
+    color: ${colors.headerLinks};
+    margin-left: 0.6rem;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-align: center;
+    white-space: nowrap;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    &.active {
+        text-decoration: underline;
+    }
 `
 
 export default function Header() {
+    
     return (
-        <NavContainer>
-            
+        <HeaderContainer>
             <LogoContainer>
                 <Link to="/">
-                <HomeLogo src={logo} />
-            </Link>
+                    <HomeLogo src={logo} />
+                </Link>
             </LogoContainer>
         
             <LinkContainer>
-                <StyledLink to="/">Home</StyledLink>
-                <StyledLink to="/about">about</StyledLink>
+                <StyledLink activeclassname="current" to="/">ACCUEIL</StyledLink>
+                <StyledLink activeclassname="current" to="/about">A PROPOS</StyledLink>
             </LinkContainer>
 
-        </ NavContainer>
+        </HeaderContainer>
     )
 }
