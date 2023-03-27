@@ -2,30 +2,34 @@
 import { createGlobalStyle } from 'styled-components'
 /*import { ThemeContext } from '../context'*/
 
+const size = {
+  mobile: "375px",
+  desktop: "1440px",
+}
+
 const StyledGlobalStyle = createGlobalStyle`
   * {
     font-family: 'Montserrat', Helvetica, sans-serif;
+  }
+
+  body {
+    margin: 0
   }
 
   #root {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 1.25rem;
+    ppadding: 1.25rem;
     max-width: 1240px;
   }
 
-  footer svg path {
-    fill: #FFF
+  @media ${size.mobile} {
+    
   }
 
-  .copyright {
-    color: #FFF
-  }
-
-  @media (max-width: 480px) {
-    body {
-    }
+  @media ${size.desktop} {
+    
   }
 `
 

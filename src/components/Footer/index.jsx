@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from '../../components/Logo'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
@@ -12,7 +11,12 @@ const FooterContainer = styled.footer`
   width: 100%;
   padding-top: 60px;
   background-color: ${colors.backgroundFooter};
+  & .copyright {
+    color: #FFF;
+  }
 `
+
+
 
 export default function Footer() {
   return (

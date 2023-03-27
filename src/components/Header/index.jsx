@@ -1,23 +1,22 @@
 //import { getDefaultNormalizer } from "@testing-library/react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from 'styled-components'
+import { device } from '../../utils/style/Devices';
 import colors from '../../utils/style/colors'
-import logo from '../../assets/logo.svg'
+import Logo from '../../components/Logo'
 
 const HeaderContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-`
-
-const LogoContainer = styled.div`
-    display: flex;
-`
-
-const HomeLogo = styled.img`
-    max-width: 37vw;
-    max-height: 68px;
+    @media ${device.mobile} {
+        height: 47px;
+        margin: 20px;
+    }
+    @media ${device.desktop} {
+        
+    }
 `
 
 const LinkContainer = styled.div`
@@ -31,9 +30,11 @@ const StyledLink = styled(NavLink)`
     font-size: 1.3em;
     text-align: center;
     white-space: nowrap;
-    &:hover {
-        cursor: pointer;
-        text-decoration: underline;
+    @media ${device.mobile} {
+        font-size: 3.5vw;
+    }
+    @media ${device.laptop} {
+        font-size: 20px;
     }
     &.active {
         text-decoration: underline;
@@ -44,17 +45,11 @@ export default function Header() {
     
     return (
         <HeaderContainer>
-            <LogoContainer>
-                <Link to="/">
-                    <HomeLogo src={logo} />
-                </Link>
-            </LogoContainer>
-        
+            <Logo />
             <LinkContainer>
-                <StyledLink activeclassname="current" to="/">ACCUEIL</StyledLink>
-                <StyledLink activeclassname="current" to="/about">A PROPOS</StyledLink>
+                <StyledLink to="/">ACCUEIL</StyledLink>
+                <StyledLink to="/about">A PROPOS</StyledLink>
             </LinkContainer>
-
         </HeaderContainer>
     )
 }
