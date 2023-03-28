@@ -27,7 +27,6 @@ const StyledLink = styled(NavLink)`
     color: ${colors.headerLinks};
     margin-left: 0.6rem;
     text-decoration: none;
-    font-size: 1.3em;
     text-align: center;
     white-space: nowrap;
     @media ${device.mobile} {
@@ -45,7 +44,7 @@ export default function Header() {
     
     return (
         <HeaderContainer>
-            <Logo />
+            <Logo color={colors.headerLinks} />
             <LinkContainer>
                 <StyledLink to="/">ACCUEIL</StyledLink>
                 <StyledLink to="/about">A PROPOS</StyledLink>

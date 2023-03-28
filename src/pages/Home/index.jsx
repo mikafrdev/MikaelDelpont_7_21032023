@@ -7,6 +7,7 @@ const HomeContainer = styled.div`
 `
 
 export default function Home() {
+    
     return (
         <HomeContainer>
             <Link to="/">Home</Link>
