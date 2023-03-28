@@ -1,16 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Banniere from '../../components/Banniere';
 
 const HomeContainer = styled.div`
     display: flex;
+    width: 90%;
+    margin: 0 auto;
 `
 
 export default function Home() {
     
     return (
         <HomeContainer>
-            <Link to="/">Home</Link>
+            <Banniere />
         </HomeContainer>
     )
 }

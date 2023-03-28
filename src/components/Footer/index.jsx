@@ -11,6 +11,7 @@ const FooterContainer = styled.footer`
   justify-content: center;
   width: 100%;
   height: 210px;
+  margin-top: 20px;
   background-color: ${colors.backgroundFooter};
 
   & .copyright {

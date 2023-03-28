@@ -14,7 +14,7 @@ const HeaderContainer = styled.nav`
         height: 47px;
         margin: 20px;
     }
-    @media ${device.desktop} {
+    @media ${device.laptop} {
         
     }
 `
