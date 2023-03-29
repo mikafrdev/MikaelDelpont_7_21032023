@@ -9,7 +9,8 @@ const HeaderContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     @media ${device.mobile} {
         height: 47px;
         margin: 20px;

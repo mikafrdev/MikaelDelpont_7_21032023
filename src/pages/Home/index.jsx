@@ -4,7 +4,7 @@ import Banniere from '../../components/Banniere';
 
 const HomeContainer = styled.div`
     display: flex;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
 `
 
