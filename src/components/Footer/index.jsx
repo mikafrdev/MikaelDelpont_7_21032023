@@ -9,9 +9,7 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  width: 100%;
   height: 210px;
-  margin-top: 20px;
   background-color: ${colors.backgroundFooter};
 
   & .copyright {

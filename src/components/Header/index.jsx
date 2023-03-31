@@ -9,15 +9,7 @@ const HeaderContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    margin: 0 auto;
-    @media ${device.mobile} {
-        height: 47px;
-        margin: 20px;
-    }
-    @media ${device.laptop} {
-        
-    }
+    width: 100%;
 `
 
 const LinkContainer = styled.div`

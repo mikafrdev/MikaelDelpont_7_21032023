@@ -1,8 +1,8 @@
-import banniere from '../../assets/banniere.jpg';
+import banner from '../../assets/banner.jpg';
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
 
-const BanniereContainer = styled.div`   
+const BannerContainer = styled.div`   
     position: relative;
     display: flex;
     align-items: center;
@@ -12,8 +12,8 @@ const BanniereContainer = styled.div`
     overflow: hidden;
     border: 1px solid #000;
     border-radius: 10px;
-    background-image: url(${banniere});
-    background-position: -300px -410px;
+    background-image: url(${banner});
+    background-position: -250px -410px;
     background-repeat: no-repeat;
     
     @media ${device.laptop} {
@@ -42,11 +42,11 @@ const BanniereContainer = styled.div`
     }    
 `
 
-export default function Banniere({color}) {
+export default function Banner({color}) {
     
     return (
-            <BanniereContainer>
+            <BannerContainer>
                 <h1>Chez vous, partout et ailleurs</h1>
-            </BanniereContainer>
+            </BannerContainer>
     )
 }

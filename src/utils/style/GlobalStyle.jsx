@@ -1,11 +1,7 @@
 /*import { useContext } from 'react'*/
 import { createGlobalStyle } from 'styled-components'
+/*import { device } from '../../utils/style/Devices';*/
 /*import { ThemeContext } from '../context'*/
-
-const size = {
-  mobile: "375px",
-  desktop: "1440px",
-}
 
 const StyledGlobalStyle = createGlobalStyle`
   * {
@@ -13,23 +9,15 @@ const StyledGlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0
+    margin: 0;
   }
 
   #root {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    ppadding: 1.25rem;
+    flex-direction: column;
     max-width: 1240px;
-  }
-
-  @media ${size.mobile} {
-    
-  }
-
-  @media ${size.desktop} {
-    
+    margin: 0 auto;
+    padding: 0 20px;
   }
 `
 
