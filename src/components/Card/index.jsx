@@ -50,30 +50,27 @@ export default function Card({ image, title }) {
     )
 }
 
-/*
+
 Card.propTypes = {
-    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    /*host{name, picture}: PropTypes.string.isRequired,*/
-    /*rating: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    equipments: PropTypes.string.isRequired,
-    tags: PropTypes.string.isRequired
-
+    // id: PropTypes.string.isRequired,
+    // description: PropTypes.string.isRequired,
+    // host{name, picture}: PropTypes.string.isRequired,
+    // rating: PropTypes.string.isRequired,
+    // location: PropTypes.string.isRequired,
+    // equipments: PropTypes.string.isRequired,
+    // tags: PropTypes.string.isRequired
   }
   
   Card.defaultProps = {
-    id: '',
     title: '',
     cover: '',
-    description: '',
-    /*host{name, picture}: ,*/
-    /*rating: '',
-    location: '',
-    equipments: '',
-    tags: '',
-  }
-
-  */
+//     id: '',
+//     description: '',
+//     host{name, picture}: ,
+//     rating: '',
+//     location: '',
+//     equipments: '',
+//     tags: '',
+   }
