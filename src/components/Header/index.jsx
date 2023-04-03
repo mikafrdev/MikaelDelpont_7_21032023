@@ -10,23 +10,24 @@ const HeaderContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 20px 0;
 `
 
 const LinkContainer = styled.div`
     display: flex;
+    justify-content: flex-end;
 `
 
 const StyledLink = styled(NavLink)`
     color: ${colors.headerLinks};
-    margin-left: 0.6rem;
+    margin-left: 10px;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
-    @media ${device.mobile} {
-        font-size: 3.5vw;
-    }
-    @media ${device.laptop} {
+    font-size: 3.5vw;
+    @media ${device.tablet} {
         font-size: 20px;
+        margin-left: 57px;
     }
     &.active {
         text-decoration: underline;
@@ -39,8 +40,8 @@ export default function Header() {
         <HeaderContainer>
             <Logo color={colors.headerLinks} />
             <LinkContainer>
-                <StyledLink to="/">ACCUEIL</StyledLink>
-                <StyledLink to="/about">A PROPOS</StyledLink>
+                <StyledLink to="/">Accueil</StyledLink>
+                <StyledLink to="/about">A Propos</StyledLink>
             </LinkContainer>
         </HeaderContainer>
     )

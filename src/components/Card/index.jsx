@@ -5,50 +5,59 @@ import { device } from '../../utils/style/Devices';
 const CardContainer = styled.div`
     position: relative;   
     display: flex;
-    flex-direction: column-reverse;
-    width: 68vw;
-    height: 55vw;
-    margin: 2vw 0;
-    background-color: #FF6060;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 4% 0;
     border-radius: 10px;
+    background-color: #FF6060;
     color: #FFF;
 
     @media ${device.tablet} {
         width: 24vw;
-        height: 25vw;
         margin: 2vw 20px 2vw;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: inherit;
-        border-radius: inherit;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    & img {
+        pposition: inherit;
+        display: block;
+        border-radius: 10px 10px 0 0;
+    }
+
+    & div {
+        display: flex;
     }
 
     & h2 {
         display: block;
+        margin: 0;
+        padding: 15px;
+        font-size: 15px;
+        font-weight: normal;
     }
 `
 
-export default function Card() {
+export default function Card({ image, title }) {
     
     return (
     <CardContainer>
-        <h2>Titre de la location</h2>
+        <img src={image} alt="{title}" />
+        <div>
+            <h2>{title}</h2>
+        </div>
     </CardContainer>
     )
 }
 
+/*
 Card.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     /*host{name, picture}: PropTypes.string.isRequired,*/
-    rating: PropTypes.string.isRequired,
+    /*rating: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     equipments: PropTypes.string.isRequired,
     tags: PropTypes.string.isRequired
@@ -61,10 +70,10 @@ Card.propTypes = {
     cover: '',
     description: '',
     /*host{name, picture}: ,*/
-    rating: '',
+    /*rating: '',
     location: '',
     equipments: '',
     tags: '',
   }
 
-  
+  */

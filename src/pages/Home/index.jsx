@@ -3,6 +3,8 @@ import Card from '../../components/Card'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
 /*import colors from '../../utils/style/colors'*/
+// import { Link } from 'react-router-dom'
+import products from "../../data/logements.json";
 
 const HomeContainer = styled.div`
     display: flex;
@@ -16,25 +18,28 @@ const CardCSection = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     margin: 22px 0;
-    padding: 6px 20px 50px 20px;
     border-radius: 25px;
     background-color: #FFF;
 
     @media ${device.tablet} {
         justify-content: space-between;
+        padding: 6px 20px 20px 20px;
         background-color: #F7F7F7;
     }
 `
 
 export default function Home() {
-    
+
     return (
         <HomeContainer>
             <Banner />
             <CardCSection>
-                <Card/>
-                <Card/><Card/><Card/>
+                {products.map((product) => {
+                    return (
+                        <Card key={product.id} image={product.cover} title={product.title} />
+                    )
+                })}
             </CardCSection>
         </HomeContainer>
-    )
+    );
 }

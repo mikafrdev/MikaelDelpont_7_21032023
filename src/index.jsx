@@ -11,8 +11,6 @@ import GlobalStyle from './utils/style/GlobalStyle'
 //import GlobalStyle from './utils/style/GlobalStyle'
 //import { ThemeProvider, SurveyProvider } from './utils/context'
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

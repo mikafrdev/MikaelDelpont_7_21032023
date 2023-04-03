@@ -16,7 +16,7 @@ const BannerContainer = styled.div`
     background-position: -250px -410px;
     background-repeat: no-repeat;
     
-    @media ${device.laptop} {
+    @media ${device.tablet} {
         background-position: 0 -300px;
         height: 223px;
     }
@@ -32,11 +32,11 @@ const BannerContainer = styled.div`
     & h1 {
         margin: 0 12vw;
         color: #FFF;
-        font-size: 2em;
+        font-size: 1.9em;
         font-weight: normal;
         z-index: 1;
 
-        @media ${device.laptop} {
+        @media ${device.tablet} {
             font-size: 48px;
         }
     }    
