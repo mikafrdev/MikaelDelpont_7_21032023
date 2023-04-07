@@ -12,7 +12,7 @@ export const BannerContainer = styled.div`
     overflow: hidden;
     border: 1px solid #000;
     border-radius: 10px;
-    background-image: url(${props => props});
+    background-image: url(${props => props.image});
     background-position: -250px -410px;
     background-repeat: no-repeat;
     
@@ -39,16 +39,14 @@ export const BannerContainer = styled.div`
         @media ${device.tablet} {
             font-size: 48px;
         }
-    }    
+    }
 `
 
-export default function Banner(props) {
-
-    // console.log(props)
+export default function Banner({image}) {
     
     return (
-            <BannerContainer>
-                <h1>Chez vous, partout et ailleurs</h1>
-            </BannerContainer>
+        <BannerContainer image={image}>
+            <h1>Chez vous, partout et ailleurs</h1>
+        </BannerContainer>
     )
 }

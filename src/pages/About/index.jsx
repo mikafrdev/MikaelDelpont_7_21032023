@@ -29,7 +29,7 @@ export default function About() {
     console.log({BannerAbout})
     return (
         <HomeContainer>
-            <Banner banner={BannerAbout} />
+            <Banner image={BannerAbout} />
             <AboutSection>
                 <Collapse
                     title="Fiabilité"
