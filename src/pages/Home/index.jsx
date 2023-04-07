@@ -1,4 +1,5 @@
 import Banner from '../../components/Banner'
+import BannerHome from "../../assets/banner-home.jpg";
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
@@ -32,7 +33,7 @@ export default function Home() {
 
     return (
         <HomeContainer>
-            <Banner />
+            <Banner image={BannerHome} />
             <CardCSection>
                 {products.map((product) => {
                     return (

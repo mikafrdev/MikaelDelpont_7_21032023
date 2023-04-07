@@ -25,8 +25,6 @@ const AboutSection = styled.section`
 `
 
 export default function About() {
-
-    console.log({BannerAbout})
     return (
         <HomeContainer>
             <Banner image={BannerAbout} />
