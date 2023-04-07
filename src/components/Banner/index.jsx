@@ -1,8 +1,8 @@
-import banner from '../../assets/banner.jpg';
+// import banner from '../../assets/banner-home.jpg';
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
 
-const BannerContainer = styled.div`   
+export const BannerContainer = styled.div`
     position: relative;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@ const BannerContainer = styled.div`
     overflow: hidden;
     border: 1px solid #000;
     border-radius: 10px;
-    background-image: url(${banner});
+    background-image: url(${props => props});
     background-position: -250px -410px;
     background-repeat: no-repeat;
     
@@ -42,7 +42,9 @@ const BannerContainer = styled.div`
     }    
 `
 
-export default function Banner({color}) {
+export default function Banner(props) {
+
+    // console.log(props)
     
     return (
             <BannerContainer>
