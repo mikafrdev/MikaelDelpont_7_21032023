@@ -1,5 +1,5 @@
 import Banner from '../../components/Banner'
-import BannerHome from "../../assets/banner-home.jpg";
+import BannerHomeImg from "../../assets/banner-home.jpg";
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
@@ -33,7 +33,9 @@ export default function Home() {
 
     return (
         <HomeContainer>
-            <Banner image={BannerHome} />
+            <Banner  bg={BannerHomeImg} bgSize="auto" bgPosition="-250px -410px" height="111px">
+                <h1>Chez vous, partout et ailleurs</h1>
+            </Banner>
             <CardCSection>
                 {products.map((product) => {
                     return (

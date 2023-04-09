@@ -8,25 +8,26 @@ import Arrow from "../../assets/arrow.svg";
 const Picto = styled.span`
     display: block;
     width: 32px;
-    height: 32px;
+    height: 30px;
     background-image: url(${Arrow});
+    background-repeat: no-repeat;
 `;
 
 export default function Collapse({ title, description }) {
     const [isOpen, setIsOpen] = useState(true);
 
-    const toggleCollapse = () => {
-        setIsOpen (!isOpen);
+    const handleClick = () => {
+        setIsOpen(!isOpen);
     };
 
     return (
         <article className="collapse">
-            <div className="title" onClick={() => toggleCollapse()}>
+            <div className="title" onClick={() => handleClick()}>
                 {title}
                 <Picto />
             </div>
 
-            <div className={`description ${isOpen ? '' : 'description-active'}`}>{description}</div>
+            <div className={`description ${isOpen ? "" : "description-active"}`}>{description}</div>
         </article>
     );
 }

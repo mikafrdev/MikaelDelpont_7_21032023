@@ -1,6 +1,9 @@
-// import banner from '../../assets/banner-home.jpg';
-import styled from 'styled-components'
-import { device } from '../../utils/style/Devices';
+import BannerHome from "../../assets/banner-home.jpg";
+import BannerAbout from "../../assets/banner-about.jpg";
+import styled from "styled-components";
+import { device } from "../../utils/style/Devices";
+import { Children } from "react";
+// import "./Banner.css";
 
 export const BannerContainer = styled.div`
     position: relative;
@@ -8,19 +11,20 @@ export const BannerContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 111px;
+    height: ${props => props.height};
     overflow: hidden;
     border: 1px solid #000;
     border-radius: 10px;
-    background-image: url(${props => props.image});
-    background-position: -250px -410px;
     background-repeat: no-repeat;
+    background-image: url(${props => props.bg});
+    background-position: ${props => props.bgPosition};
+    background-size: ${props => props.bgSize};
+    background-color: ${props => props.page};
     
     @media ${device.tablet} {
         background-position: 0 -300px;
         height: 223px;
     }
-
     &:before {
         content: '';
         position: absolute;
@@ -35,18 +39,19 @@ export const BannerContainer = styled.div`
         font-size: 1.9em;
         font-weight: normal;
         z-index: 1;
-
         @media ${device.tablet} {
             font-size: 48px;
         }
     }
 `
 
-export default function Banner({image}) {
-    
+export default function Banner({bg, bgSize, bgPosition, height, page, children}) {
+
+    console.log({page})
+
     return (
-        <BannerContainer image={image}>
-            <h1>Chez vous, partout et ailleurs</h1>
+        <BannerContainer bg={bg} bgPosition={bgPosition} bgSize={bgSize} height={height} page={page}>
+            {children}
         </BannerContainer>
-    )
+    );
 }

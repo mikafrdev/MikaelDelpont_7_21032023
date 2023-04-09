@@ -1,13 +1,17 @@
 article.collapse {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 20px;
 }
 
 article.collapse div {
     width: 92%;
-    padding: 20px 4%;
-    border-radius: 10px;
+    padding: 0 4%;
+    border-radius: 5px;
+    @media screen and (min-width: 780px){
+        max-width: 1023px;
+    }
 }
 
 article.collapse .title {

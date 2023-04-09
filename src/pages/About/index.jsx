@@ -1,7 +1,7 @@
-import Banner from '../../components/Banner'
-import BannerAbout from "../../assets/banner-about.jpg";
-import Collapse from '../../components/Collapse'
-import styled from 'styled-components'
+import Banner from '../../components/Banner';
+import BannerAboutImg from "../../assets/banner-about.jpg";
+import Collapse from '../../components/Collapse';
+import styled from 'styled-components';
 import { device } from '../../utils/style/Devices';
 
 const HomeContainer = styled.div`
@@ -15,7 +15,7 @@ const AboutSection = styled.section`
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 22px 0;
+    margin: 10px 0;
     border-radius: 25px;
     background-color: #FFF;
 
@@ -24,10 +24,13 @@ const AboutSection = styled.section`
     }
 `
 
+
+
 export default function About() {
+
     return (
         <HomeContainer>
-            <Banner image={BannerAbout} />
+            <Banner bg={BannerAboutImg} bgSize="cover" bgPosition="unset" height="223px" page="about" />
             <AboutSection>
                 <Collapse
                     title="Fiabilité"
