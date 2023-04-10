@@ -1,51 +1,83 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
+import { Link } from "react-router-dom";
+
+
 
 const CardContainer = styled.div`
-    position: relative;   
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    position: relative;
     width: 100%;
+    height: 255px;
     margin: 4% 0;
     border-radius: 10px;
     background-color: #FF6060;
     color: #FFF;
+    
+
 
     @media ${device.tablet} {
         width: 24vw;
         margin: 2vw 20px 2vw;
     }
 
+    & a {
+        text-decoration: none;
+    }
+
+    & .cardImgContainer {
+        display: flex;
+        justify-content: space-between;
+        height: 255px;
+    }
+
     & img {
+        width: 100%;
+        height: 255px;
         pposition: inherit;
         display: block;
-        border-radius: 10px 10px 0 0;
+        border-radius: 10px;
     }
 
-    & div {
-        display: flex;
+    & .cardTitleContainer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background: linear-gradient(0deg,
+            rgba(0,0,0,0.1) 0%,
+            rgba(0,0,0,0.1) 100%);
     }
 
-    & h2 {
-        display: block;
+    & .cardTitleContainer h2 {
         margin: 0;
         padding: 15px;
         font-size: 15px;
         font-weight: normal;
+        color: #FFF;
     }
 `
 
-export default function Card({ image, title }) {
+export default function Card({ image, title, id }) {
+
+    // <CardContainer>
+    //     <LinkDetails to={`/details/${id}`}>
+    //         <img src={image} alt="{title}" />
+    //         <div>
+    //             <h2>{title}</h2>
+    //         </div>
+    //     </LinkDetails>
+    // </CardContainer>
     
     return (
     <CardContainer>
-        <img src={image} alt="{title}" />
-        <div>
-            <h2>{title}</h2>
-        </div>
+        <Link to={`/details/${id}`}>
+            <div className="cardImgContainer">
+                <img src={image} alt="{title}" />
+            </div>
+            <div className="cardTitleContainer">
+                <h2>{title}</h2>
+            </div>
+        </Link>
     </CardContainer>
     )
 }
