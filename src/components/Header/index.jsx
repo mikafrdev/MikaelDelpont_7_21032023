@@ -11,6 +11,9 @@ const HeaderContainer = styled.nav`
     align-items: center;
     width: 100%;
     margin: 20px 0;
+    @media ${device.tablet} {
+        margin-top: 40px;
+    }
 `
 
 const LinkContainer = styled.div`
@@ -26,7 +29,7 @@ const StyledLink = styled(NavLink)`
     white-space: nowrap;
     font-size: 3.5vw;
     @media ${device.tablet} {
-        font-size: 20px;
+        font-size: 24px;
         margin-left: 57px;
     }
     &.active {

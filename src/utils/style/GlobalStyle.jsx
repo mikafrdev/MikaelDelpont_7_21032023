@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const StyledGlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   body {
