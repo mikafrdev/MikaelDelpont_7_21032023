@@ -13,7 +13,7 @@ const Picto = styled.span`
     background-repeat: no-repeat;
 `;
 
-export default function Collapse({ title, description }) {
+export default function Collapse({ title, children }) {
     const [isOpen, setIsOpen] = useState(true);
 
     const handleClick = () => {
@@ -27,7 +27,7 @@ export default function Collapse({ title, description }) {
                 <Picto />
             </div>
 
-            <div className={`description ${isOpen ? "" : "description-active"}`}>{description}</div>
+            <div className={`description ${isOpen ? "" : "description-active"}`}>{children}</div>
         </article>
     );
 }

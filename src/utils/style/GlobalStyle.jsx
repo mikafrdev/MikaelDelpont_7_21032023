@@ -1,5 +1,6 @@
 /*import { useContext } from 'react'*/
 import { createGlobalStyle } from 'styled-components'
+import colors from "../../utils/style/colors";
 /*import { device } from '../../utils/style/Devices';*/
 /*import { ThemeContext } from '../context'*/
 

@@ -3,21 +3,7 @@ import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
 import { Link } from "react-router-dom";
 
-const TagContainer = styled.h3`
-    position: relative;
-    width: 100%;
-    height: 255px;
-    margin: 4% 0;
-    border-radius: 10px;
-    background-color: #FF6060;
-    color: #FFF;
-    
-    @media ${device.tablet} {
-        
-    }
-`
-
-export default function Tag({ tagName }) {
+export default function Tag({ children }) {
 
     // <CardContainer>
     //     <LinkDetails to={`/details/${id}`}>
@@ -29,9 +15,9 @@ export default function Tag({ tagName }) {
     // </CardContainer>
     
     return (
-    <TagContainer>
-        {tagName}
-    </TagContainer>
+    <li>
+        {children}
+    </li>
     )
 }
 
