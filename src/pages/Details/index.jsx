@@ -1,7 +1,7 @@
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow';
 import Tag from '../../components/Tag';
-import Star from "../../assets/Vector.svg";
+import Star from "../../components/Pictos";
 import styled from 'styled-components';
 import { device } from '../../utils/style/Devices';
 import colors from "../../utils/style/colors";
@@ -99,8 +99,22 @@ const StarsContainer = styled.ul`
         margin-right: 6px;
     }
 
-    & li img {
-        fill: #E3E3E3;
+    & li span.star {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(${Star}) no-repeat;
+        
+    }
+
+    & .star svg path {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(${Star}) no-repeat
+        fill: red;
+        stroke: red;
+        
     }
 
     & li img.active {
@@ -119,6 +133,12 @@ const HostContainer = styled.div`
 
     & h3 {
         font-size: 12px;
+    }
+
+    & img {
+        width: 32px;
+        height: 32px;
+        margin-left: 10px;
     }
 `
 
@@ -146,19 +166,10 @@ export default function Details() {
 
                 <StarsContainer>
                     <li>
-                        <img className="active" src={`${Star}`} alt="" />
+                        <Star fillColor={`${colors.primary}`} />
                     </li>
                     <li>
-                        <img className="active" src={`${Star}`} alt="" />
-                    </li>
-                    <li>
-                        <img className="active" src={`${Star}`} alt="" />
-                    </li>
-                    <li>
-                        <img src={`${Star}`} alt="" />
-                    </li>
-                    <li>
-                        <img src={`${Star}`} alt="" />
+                        <Star />
                     </li>
                 </StarsContainer>
 
@@ -168,7 +179,10 @@ export default function Details() {
                     </h3>
 
                     <div>
-                        picto
+                        <img 
+                            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
+                            alt="alt text"
+                            />
                     </div>
                 </HostContainer>
 

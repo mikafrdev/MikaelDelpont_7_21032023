@@ -46,6 +46,7 @@ const CardContainer = styled.div`
         background: linear-gradient(0deg,
             rgba(0,0,0,0.1) 0%,
             rgba(0,0,0,0.1) 100%);
+        border-radius: 10px;
     }
 
     & .cardTitleContainer h2 {
