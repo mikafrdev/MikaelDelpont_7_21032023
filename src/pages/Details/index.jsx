@@ -1,7 +1,9 @@
+import { useParams } from "react-router-dom";
+import products from "../../data/logements.json";
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow';
-import Tag from '../../components/Tag';
-import Star from "../../components/Pictos";
+import Tags from '../../components/Tags';
+import PictoStar from "../../components/Pictos";
 import styled from 'styled-components';
 import { device } from '../../utils/style/Devices';
 import colors from "../../utils/style/colors";
@@ -49,31 +51,6 @@ const DetailsSection = styled.section`
     }
 `
 
-const TagsContainer = styled.ul`
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-
-    @media ${device.tablet} {
-        
-    }
-
-    & li  {
-    margin-right: 10px;
-    padding: 4px 28px;
-    border-radius: 5px;
-    font-size: 10px;
-    background-color: #FF6060;
-    color: #FFF;
-
-    
-    @media ${device.tablet} {
-        
-    }
-}
-`
-
 const InfosContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -83,6 +60,19 @@ const InfosContainer = styled.div`
     @media ${device.tablet} {
         
     }
+`
+
+const TagsContainer = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+
+    @media ${device.tablet} {
+        
+    }
+}
 `
 
 const StarsContainer = styled.ul`
@@ -98,28 +88,6 @@ const StarsContainer = styled.ul`
     & li {
         margin-right: 6px;
     }
-
-    & li span.star {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(${Star}) no-repeat;
-        
-    }
-
-    & .star svg path {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(${Star}) no-repeat
-        fill: red;
-        stroke: red;
-        
-    }
-
-    & li img.active {
-        fill: ${colors.primary};
-    }
 `
 
 const HostContainer = styled.div`
@@ -134,62 +102,63 @@ const HostContainer = styled.div`
     & h3 {
         font-size: 12px;
     }
-
+    
     & img {
         width: 32px;
         height: 32px;
         margin-left: 10px;
     }
-`
+    `
 
-export default function Details() {
+    export default function Details() {    
+    const {id} = useParams();
+    const annonce = 
+        products
+            .filter(annonce => annonce.id === id);
+
+            // console.log("images : ", annonce)
+            // console.log("ratings : ", annonce[0].rating)
+            // {annonce[0].rating.map((item, index) => <PictoStar key={item} tag={item} className="{index}" />)}
+            const rating = annonce[0].rating;
+            // console.log("rating : ", rating)
+            // `{fillColor=${colors.primary}}`
 
     return (
+        
         <DetailsContainer>
 
-            <Slideshow>
+            <Slideshow images={`${annonce[0].pictures}`} />
 
+            <h1>{annonce[0].title}</h1>
 
-            </Slideshow>
+            <h2>{annonce[0].location}</h2>
 
-            <h1>Paris center, on the romantic Canal Saint-Martin</h1>
-
-            <h2>Paris, Île-de-France</h2>
-
-            <TagsContainer>
-                <Tag>Cosy</Tag>
-                <Tag>Canal</Tag>
-                <Tag>Paris 10</Tag>
+            <TagsContainer> 
+                {annonce[0].tags.map((item) => <Tags key={item} tag={item} />)}
             </TagsContainer>
+            
 
             <InfosContainer>
 
                 <StarsContainer>
-                    <li>
-                        <Star fillColor={`${colors.primary}`} />
-                    </li>
-                    <li>
-                        <Star />
-                    </li>
+                    <PictoStar fillColor={rating >= 1 ? `${colors.primary}` : ""} />
+                    <PictoStar fillColor={rating >= 2 ? `${colors.primary}` : ""} />
+                    <PictoStar fillColor={rating >= 3 ? `${colors.primary}` : ""} />
+                    <PictoStar fillColor={rating >= 4 ? `${colors.primary}` : ""} />
+                    <PictoStar fillColor={rating >= 5 ? `${colors.primary}` : ""} />
                 </StarsContainer>
 
                 <HostContainer>
-                    <h3>
-                        Alexandre Dumas
-                    </h3>
+                    <h3>{annonce[0].host.name}</h3>
 
                     <div>
-                        <img 
-                            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
-                            alt="alt text"
-                            />
+                        <img src={annonce[0].host.picture} alt="alt text" />
                     </div>
                 </HostContainer>
 
             </InfosContainer>
             
             <DetailsSection>
-
                 <Collapse title="Description">
                     Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). "
                 </Collapse>
