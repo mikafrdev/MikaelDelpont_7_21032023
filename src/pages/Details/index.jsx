@@ -120,7 +120,7 @@ export default function Details() {
         
         <DetailsContainer>
 
-            <Slideshow iimages={`${pictures}`} />
+            <Slideshow picturesArray={pictures} />
 
             <h1>{title}</h1>
 

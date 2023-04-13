@@ -40,15 +40,14 @@ const PictoRight = styled(PictoLeft)`
     transform: rotate(-90deg);
 `;
 
-export default function Slideshow({ iimages }) {
+export default function Slideshow({ picturesArray }) {
     const [index, setindex] = useState(0);
     
     useEffect(() => {
 
     }, []);
-    
-    const imagesArray = iimages.split(',');
-    const imagesNumber = imagesArray.length - 1;
+
+    const imagesNumber = picturesArray.length - 1;
 
     const navPrevious = () => {
         index > 0 ? setindex(index - 1) : setindex(imagesNumber)
@@ -61,7 +60,7 @@ export default function Slideshow({ iimages }) {
     return (
         <SlideshowContainer>
             <PictoLeft onClick={() => navPrevious()} />
-            <img src={`${imagesArray[index]}`} alt="TEST" />
+            <img src={`${picturesArray[index]}`} alt="TEST" />
             <PictoRight onClick={() => navNext()} />
         </SlideshowContainer>
     );
