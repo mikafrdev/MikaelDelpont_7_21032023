@@ -62,19 +62,6 @@ const InfosContainer = styled.div`
     }
 `
 
-const TagsContainer = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-
-    @media ${device.tablet} {
-        
-    }
-}
-`
-
 const StarsContainer = styled.ul`
     display: flex;
     list-style-type: none;
@@ -110,33 +97,36 @@ const HostContainer = styled.div`
     }
     `
 
-    export default function Details() {    
+export default function Details() {
     const {id} = useParams();
-    const annonce = 
-        products
-            .filter(annonce => annonce.id === id);
+    const annonce = products.filter(annonce => annonce.id === id);
+    const pictures = annonce[0].pictures;
+    const title = annonce[0].title;
+    const location = annonce[0].location;
+    const tags = annonce[0].tags;
+    const hostName = annonce[0].host.name;
+    const hostPicture = annonce[0].host.picture;
+    const rating = annonce[0].rating;
+    const description = annonce[0].description;
+    const equipments = annonce[0].equipments;
 
-            // console.log("images : ", annonce)
-            // console.log("ratings : ", annonce[0].rating)
-            // {annonce[0].rating.map((item, index) => <PictoStar key={item} tag={item} className="{index}" />)}
-            const rating = annonce[0].rating;
-            // console.log("rating : ", rating)
-            // `{fillColor=${colors.primary}}`
+    //console.log("annonce : ", annonce)
+    //console.log("equipment : ", equipments)
+    // console.log("DETAIL pictures : ", pictures)
+    
+    // {annonce[0].rating.map((item, index) => <PictoStar key={item} tag={item} className="{index}" />)}
 
     return (
         
         <DetailsContainer>
 
-            <Slideshow images={`${annonce[0].pictures}`} />
+            <Slideshow iimages={`${pictures}`} />
 
-            <h1>{annonce[0].title}</h1>
+            <h1>{title}</h1>
 
-            <h2>{annonce[0].location}</h2>
+            <h2>{location}</h2>
 
-            <TagsContainer> 
-                {annonce[0].tags.map((item) => <Tags key={item} tag={item} />)}
-            </TagsContainer>
-            
+            <Tags tagsArray={tags} />
 
             <InfosContainer>
 
@@ -149,10 +139,10 @@ const HostContainer = styled.div`
                 </StarsContainer>
 
                 <HostContainer>
-                    <h3>{annonce[0].host.name}</h3>
+                    <h3>{hostName}</h3>
 
                     <div>
-                        <img src={annonce[0].host.picture} alt="alt text" />
+                        <img src={hostPicture} alt="alt text" />
                     </div>
                 </HostContainer>
 
@@ -160,18 +150,12 @@ const HostContainer = styled.div`
             
             <DetailsSection>
                 <Collapse title="Description">
-                    Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). "
+                    {description}
                 </Collapse>
 
                 <Collapse title="Équipements">
                     <ul>
-                        <li>Climatisation</li>
-                        <li>Wi-Fi</li>
-                        <li>Cuisine</li>
-                        <li>Espace de travail</li>
-                        <li>Fer à repasser</li>
-                        <li>Sèche-cheveux</li>
-                        <li>Cintres"</li>
+                        {equipments.map((item) => <li key={item}>{item}</li> )}
                     </ul>
                 </Collapse>
 

@@ -1,0 +1,18 @@
+.tagscontainer ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.tagscontainer ul li {
+    display: flex;
+    margin: 0 10px 10px 0;
+    padding: 4px 28px;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: #ff6060;
+    color: #fff;
+    white-space: nowrap;
+}

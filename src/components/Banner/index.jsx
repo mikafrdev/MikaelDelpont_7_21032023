@@ -47,7 +47,7 @@ export const BannerContainer = styled.div`
 
 export default function Banner({bg, bgSize, bgPosition, height, page, children}) {
 
-    console.log({page})
+    //console.log({page})
 
     return (
         <BannerContainer bg={bg} bgPosition={bgPosition} bgSize={bgSize} height={height} page={page}>

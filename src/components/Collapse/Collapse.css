@@ -7,7 +7,6 @@ article.collapse {
 
 article.collapse div {
     width: 92%;
-    padding: 0 4%;
     border-radius: 5px;
     @media screen and (min-width: 780px){
         max-width: 1023px;
@@ -20,6 +19,8 @@ article.collapse .title {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 30px;
+    padding: 0 4%;
     background-color: #FF6060;
     color: #FFF;
     z-index: 2;
@@ -28,10 +29,17 @@ article.collapse .title {
 
 article.collapse .description {
     display: none;
+    padding: 20px 10px 20px 10px;
     line-height: 25px;
     background-color: #F6F6F6;
     color: #FF6060;
     z-index: 1;
+}
+
+article.collapse .description ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 article.collapse .description-active {

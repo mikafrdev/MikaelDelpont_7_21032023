@@ -33,7 +33,7 @@ export default function Home() {
 
     return (
         <HomeContainer>
-            <Banner  bg={BannerHomeImg} bgSize="auto" bgPosition="-250px -410px" height="111px">
+            <Banner bg={BannerHomeImg} bgSize="auto" bgPosition="-250px -410px" height="111px">
                 <h1>Chez vous, partout et ailleurs</h1>
             </Banner>
             <CardCSection>

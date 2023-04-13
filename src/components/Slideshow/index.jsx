@@ -40,32 +40,29 @@ const PictoRight = styled(PictoLeft)`
     transform: rotate(-90deg);
 `;
 
-const images = [
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
-]
-
 export default function Slideshow({ iimages }) {
     const [index, setindex] = useState(0);
     
     useEffect(() => {
 
     }, []);
+    
+    const imagesArray = iimages.split(',');
+    const imagesNumber = imagesArray.length - 1;
 
+    const navPrevious = () => {
+        index > 0 ? setindex(index - 1) : setindex(imagesNumber)
+    }
 
-    console.log("SLIDESHOW iimages : ", iimages);
-
-    //const test = Object.keys(iimages)
-    //console.log("SLIDESHOW : ", test)
+    const navNext = () => {
+        index < imagesNumber ? setindex(index + 1) : setindex(0)
+    }
 
     return (
         <SlideshowContainer>
-            <PictoLeft onClick={() => setindex(index - 1)} />
-            <img src={`${images[index]}`} alt="TEST" />
-            <PictoRight onClick={() => setindex(index + 1)} />
+            <PictoLeft onClick={() => navPrevious()} />
+            <img src={`${imagesArray[index]}`} alt="TEST" />
+            <PictoRight onClick={() => navNext()} />
         </SlideshowContainer>
     );
 }
