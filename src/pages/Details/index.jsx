@@ -3,7 +3,7 @@ import products from "../../data/logements.json";
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow';
 import Tags from '../../components/Tags';
-import PictoStar from "../../components/Pictos";
+import Stars from "../../components/Stars";
 import styled from 'styled-components';
 import { device } from '../../utils/style/Devices';
 import colors from "../../utils/style/colors";
@@ -62,21 +62,6 @@ const InfosContainer = styled.div`
     }
 `
 
-const StarsContainer = styled.ul`
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 1px 0 0 0;
-
-    @media ${device.tablet} {
-        
-    }
-
-    & li {
-        margin-right: 6px;
-    }
-`
-
 const HostContainer = styled.div`
     display: flex;
     align-items: center;
@@ -130,13 +115,7 @@ export default function Details() {
 
             <InfosContainer>
 
-                <StarsContainer>
-                    <PictoStar fillColor={rating >= 1 ? `${colors.primary}` : ""} />
-                    <PictoStar fillColor={rating >= 2 ? `${colors.primary}` : ""} />
-                    <PictoStar fillColor={rating >= 3 ? `${colors.primary}` : ""} />
-                    <PictoStar fillColor={rating >= 4 ? `${colors.primary}` : ""} />
-                    <PictoStar fillColor={rating >= 5 ? `${colors.primary}` : ""} />
-                </StarsContainer>
+                <Stars starsNumber="5" rating={rating} />
 
                 <HostContainer>
                     <h3>{hostName}</h3>
