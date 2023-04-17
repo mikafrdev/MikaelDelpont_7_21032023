@@ -50,6 +50,7 @@ const CardContainer = styled.div`
     }
 
     & .cardTitleContainer h2 {
+        width: 44%;
         margin: 0;
         padding: 15px;
         font-size: 15px;

@@ -13,7 +13,9 @@
 
 .bannerHome {
     background-image: url("/src/assets/banner-home.jpg");
-    background-position: -250px -410px;
+    background-size: 600px;
+    background-position: -140px -150px;
+
 }
 
 .BannerContainer::before {

@@ -1,9 +1,5 @@
-import BannerHome from "../../assets/banner-home.jpg";
-import BannerAbout from "../../assets/banner-about.jpg";
 import styled from "styled-components";
 import { device } from "../../utils/style/Devices";
-import { Children } from "react";
-// import "./Banner.css";
 
 export const BannerContainer = styled.div`
     position: relative;
@@ -46,8 +42,6 @@ export const BannerContainer = styled.div`
 `
 
 export default function Banner({bg, bgSize, bgPosition, height, page, children}) {
-
-    //console.log({page})
 
     return (
         <BannerContainer bg={bg} bgPosition={bgPosition} bgSize={bgSize} height={height} page={page}>
