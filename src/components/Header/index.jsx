@@ -1,4 +1,3 @@
-//import { getDefaultNormalizer } from "@testing-library/react";
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
@@ -43,8 +42,8 @@ export default function Header() {
         <HeaderContainer>
             <Logo color={colors.headerLinks} />
             <LinkContainer>
-                <StyledLink to="/">Accueil</StyledLink>
-                <StyledLink to="/about">A Propos</StyledLink>
+                <StyledLink to="/">ACCUEIL</StyledLink>
+                <StyledLink to="/about">A PROPOS</StyledLink>
             </LinkContainer>
         </HeaderContainer>
     )
