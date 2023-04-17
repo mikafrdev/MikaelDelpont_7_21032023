@@ -1,0 +1,58 @@
+.cardcontainer, .cardImgContainer, .cardImgContainer img {
+    height: 255px;
+    
+    @media screen and (min-width: 780px) {
+        height: 340px;
+    }
+}
+
+.cardcontainer {
+    position: relative;
+    margin: 4% 0;
+    border-radius: 10px;
+    background-color: #ff6060;
+    color: #fff;
+
+    @media screen and (min-width: 780px) {
+        margin: 2vw 20px 2vw;
+    }
+}
+
+.cardcontainer a {
+    text-decoration: none;
+}
+
+.cardImgContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardImgContainer img {
+    width: 335px;
+    display: block;
+    border-radius: 10px;
+    @media screen and (min-width: 780px) {
+        width: 340px;
+    }
+}
+
+.cardTitleContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    border-radius: 10px;
+}
+
+.cardTitleContainer h2 {
+    width: 44%;
+    margin: 0;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #fff;
+}
