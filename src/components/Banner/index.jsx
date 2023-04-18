@@ -20,6 +20,7 @@ export const BannerContainer = styled.div`
     @media ${device.tablet} {
         background-position: 0 -300px;
         height: 223px;
+        border-radius: 25px;
     }
     &:before {
         content: '';

@@ -1,21 +1,8 @@
-.cardcontainer, .cardImgContainer, .cardImgContainer img {
-    height: 255px;
-    
-    @media screen and (min-width: 780px) {
-        height: 340px;
-    }
-}
-
 .cardcontainer {
     position: relative;
     margin: 4% 0;
     border-radius: 10px;
-    background-color: #ff6060;
     color: #fff;
-
-    @media screen and (min-width: 780px) {
-        margin: 2vw 20px 2vw;
-    }
 }
 
 .cardcontainer a {
@@ -28,12 +15,9 @@
 }
 
 .cardImgContainer img {
-    width: 335px;
+    width: 100%;
     display: block;
     border-radius: 10px;
-    @media screen and (min-width: 780px) {
-        width: 340px;
-    }
 }
 
 .cardTitleContainer {
@@ -55,4 +39,35 @@
     font-size: 15px;
     font-weight: normal;
     color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+    .cardcontainer, .cardImgContainer, .cardImgContainer img {
+        
+    }
+
+    .cardcontainer {
+        width: 46%;
+        margin: 25px 2%;
+    }
+
+    .cardImgContainer img {
+        
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .cardcontainer, .cardImgContainer, .cardImgContainer img {
+        height: 340px;
+    }
+
+    .cardcontainer {
+        width: auto;
+        margin: 25px 30px;
+        border-radius: 25px;
+    }
+
+    .cardImgContainer img {
+        width: 340px;
+    }
 }
