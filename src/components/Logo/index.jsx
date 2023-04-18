@@ -10,15 +10,6 @@ const LogoContainer = styled.div`
         height: 10vw;
         max-height: 68px;
     }
-    @media ${device.mobile} {
-        & svg {
-            
-            
-        }
-    }
-    @media ${device.desktop} {
-        
-    }
 `
 
 export default function Logo({color}) {

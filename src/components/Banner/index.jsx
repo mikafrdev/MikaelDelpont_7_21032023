@@ -27,7 +27,7 @@ export const BannerContainer = styled.div`
         position: absolute;
         width: 100%;
         height: inherit;
-        background-color: rgba(0,0,0,0.25);
+        background-color: rgba(0,0,0,.3);
     }
     
     & h1 {

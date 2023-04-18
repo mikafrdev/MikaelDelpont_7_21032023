@@ -39,7 +39,7 @@ export default function Home() {
             <CardCSection>
                 {products.map((product) => {
                     return (
-                        <Card key={product.id} image={product.cover} title={product.title} id={product.id} />
+                        <Card key={product.id} id={product.id} title={product.title} cover={product.cover}  />
                     )
                 })}
             </CardCSection>

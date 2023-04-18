@@ -42,10 +42,6 @@ const PictoRight = styled(PictoLeft)`
 
 export default function Slideshow({ picturesArray }) {
     const [index, setindex] = useState(0);
-    
-    useEffect(() => {
-
-    }, []);
 
     const imagesNumber = picturesArray.length - 1;
 

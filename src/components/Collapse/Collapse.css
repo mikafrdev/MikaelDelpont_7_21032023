@@ -1,16 +1,13 @@
 article.collapse {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
     margin-top: 20px;
 }
 
 article.collapse div {
     width: 92%;
     border-radius: 5px;
-    @media screen and (min-width: 780px){
-        max-width: 1023px;
-    }
 }
 
 article.collapse .title {
@@ -20,20 +17,22 @@ article.collapse .title {
     align-items: center;
     justify-content: space-between;
     height: 30px;
-    padding: 0 4%;
-    background-color: #FF6060;
-    color: #FFF;
-    z-index: 2;
+    line-height: 19px;
+    padding: 0 11px;
+    font-size: 12px;
+    background-color: #ff6060;
+    color: #fff;
     cursor: pointer;
 }
 
 article.collapse .description {
     display: none;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 17px 10px;
     line-height: 25px;
     background-color: #F6F6F6;
     color: #FF6060;
-    z-index: 1;
+    font-size: 12px;
+    line-height: 17px;
 }
 
 article.collapse .description ul {
@@ -44,4 +43,10 @@ article.collapse .description ul {
 
 article.collapse .description-active {
     display: block;
+}
+
+@media screen and (min-width: 780px) {
+    article.collapse div {
+        max-width: 1023px;
+    }
 }

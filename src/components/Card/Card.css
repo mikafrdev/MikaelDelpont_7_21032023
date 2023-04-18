@@ -42,22 +42,16 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .cardcontainer, .cardImgContainer, .cardImgContainer img {
-        
-    }
-
     .cardcontainer {
         width: 46%;
         margin: 25px 2%;
     }
-
-    .cardImgContainer img {
-        
-    }
 }
 
 @media screen and (min-width: 1440px) {
-    .cardcontainer, .cardImgContainer, .cardImgContainer img {
+    .cardcontainer,
+    .cardImgContainer,
+    .cardImgContainer img {
         height: 340px;
     }
 

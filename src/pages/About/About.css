@@ -1,0 +1,39 @@
+.aboutcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.aboutsection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.aboutsection .collapse .description {
+    font-size: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+    .aboutsection {
+        padding: 6px 0 20px 0;
+    }
+
+    .aboutsection .collapse {
+        width: 1023px;
+    }
+
+    .aboutsection .collapse .title {
+        height: 47px;
+        font-size: 24px;
+        padding: 0 18px;
+    }
+
+    .aboutsection .collapse .description {
+        font-size: 24px;
+    }
+}
