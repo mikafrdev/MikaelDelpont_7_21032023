@@ -1,14 +1,17 @@
 .arrowup {
     display: block;
-    width: 14px;
-    height: 8px;
+    width: 3vw;
+    height: inherit;
     background-repeat: no-repeat;
     transform: rotate(180deg);
     border: 0;
     background-color: transparent;
+    background-position: center;
     cursor: pointer;
+    transition-duration: .3s;
 }
 
 .arrowdown {
-    transform: rotate(-90deg);
+    transform: rotate(360deg);
+    transition-duration: .3s;
 }

@@ -13,7 +13,7 @@ export default function Collapse({ title, children }) {
         <article className="collapse">
             <div className="title" onClick={() => handleClick()}>
                 {title}
-                <Arrow />
+                <Arrow className={`arrowup ${isOpen ? "" : "arrowdown"}`} />
             </div>
 
             <div className={`description ${isOpen ? "" : "description-active"}`}>{children}</div>

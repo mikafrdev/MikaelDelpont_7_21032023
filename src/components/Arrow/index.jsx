@@ -1,11 +1,12 @@
+import React from "react";
 import ArrowSVG from "../../assets/arrow.svg";
 import "./Arrow.css";
 
-export default function Arrow() {
+export default function Arrow(props) {
     return (
         <button
             type="button"
-            className="arrowup"
+            className={props.className}
             style={{backgroundImage: `url(${ArrowSVG})`}}
         ></button>
     );
