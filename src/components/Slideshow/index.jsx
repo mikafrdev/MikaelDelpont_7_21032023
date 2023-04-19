@@ -1,44 +1,6 @@
-import { useState, useEffect } from "react";
-import styled from "styled-components";
-import { device } from "../../utils/style/Devices";
-import colors from "../../utils/style/colors";
-// import "./Slideshow.css";
-import Arrow from "../../assets/arrow.svg";
-
-const SlideshowContainer = styled.div`
-    position: relative;
-    display: block;
-    width: 335px;
-    height: 255px;
-    border-radius: 10px;
-    overflow: hidden;
-
-    & img {
-        width: 335px;
-        height: 255px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-`;
-
-const PictoLeft = styled.button`
-    position: absolute;
-    top: 45%;
-    display: block;
-    width: 32px;
-    height: 30px;
-    background-image: url(${Arrow});
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-`;
-
-const PictoRight = styled(PictoLeft)`
-    right: 0;
-    transform: rotate(-90deg);
-`;
+import { useState } from "react";
+import "./Slideshow.css";
+import Arrow from "../Arrow/";
 
 export default function Slideshow({ picturesArray }) {
     const [index, setindex] = useState(0);
@@ -54,10 +16,16 @@ export default function Slideshow({ picturesArray }) {
     }
 
     return (
-        <SlideshowContainer>
-            <PictoLeft onClick={() => navPrevious()} />
+        <div className="slideshowcontainer">
+            <div className="navleft" onClick={() => navPrevious()}>
+                <Arrow className="arrowleft" />
+            </div>
+
             <img src={`${picturesArray[index]}`} alt="TEST" />
-            <PictoRight onClick={() => navNext()} />
-        </SlideshowContainer>
+
+            <div className="navright" onClick={() => navNext()}>
+                <Arrow className="arrowright" />
+            </div>
+        </div>
     );
 }

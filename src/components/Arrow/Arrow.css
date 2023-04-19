@@ -1,4 +1,4 @@
-.arrowup {
+.arrowup, .arrowleft, .arrowright, .arrowdown {
     display: block;
     width: 3vw;
     height: inherit;
@@ -11,7 +11,14 @@
     transition-duration: .3s;
 }
 
+.arrowleft {
+    transform: rotate(90deg);
+}
+
+.arrowright {
+    transform: rotate(270deg);
+}
+
 .arrowdown {
     transform: rotate(360deg);
-    transition-duration: .3s;
 }

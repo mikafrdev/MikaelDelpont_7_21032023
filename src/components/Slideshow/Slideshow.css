@@ -1,0 +1,43 @@
+.slideshowcontainer {
+    position: relative;
+    display: block;
+    height: 255px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slideshowcontainer img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.navleft, .navleft .arrowleft, .navright, .navright .arrowright {
+    width: 8vw;
+    height: 8vw;
+}
+
+.navleft, .navright {
+    position: absolute;
+    top: 50%;
+}
+
+.navleft {
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.navright {
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+@media screen and (min-width: 1024px) {
+    .slideshowcontainer {
+        height: 415px;
+    }
+    .slideshowcontainer img {
+        height: 415px;
+    }
+}

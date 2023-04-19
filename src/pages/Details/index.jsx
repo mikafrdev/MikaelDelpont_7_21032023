@@ -7,6 +7,7 @@ import Stars from "../../components/Stars";
 import styled from 'styled-components';
 import { device } from '../../utils/style/Devices';
 import colors from "../../utils/style/colors";
+import './Details.css'
 
 const DetailsContainer = styled.div`
     display: flex;
@@ -20,7 +21,7 @@ const DetailsContainer = styled.div`
     & h1 {
         font-size: 18px;
         font-weight: normal;
-        margin: 15px 0 0 0;
+        margin: 0;
         line-height: 25px;
     }
 
@@ -39,25 +40,44 @@ const DetailsContainer = styled.div`
 
 const DetailsSection = styled.section`
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
+    padding: 6px 0 20px 0;
     border-radius: 25px;
     background-color: #FFF;
 
-    @media ${device.tablet} {
-        padding: 6px 0 20px 0;
+    @media ${device.laptop} {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    & article {
+
+        @media ${device.laptop} {
+            width: 48%;
+        }
     }
 `
 
 const InfosContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 16px 0 0 0;
+    flex-wrap: wrap;
+    margin: 15px 0 0 0;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
+        flex-wrap: nowrap;
+    }
+`
+
+const AnnonceContainer = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;    
+
+    @media ${device.laptop} {
         
     }
 `
@@ -65,11 +85,22 @@ const InfosContainer = styled.div`
 const HostContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 100%;
     
-    @media ${device.tablet} {
-        
+    @media ${device.laptop} {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: flex-end;
+        width: 20%;
     }
+`
+
+const ProfilContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     & h3 {
         font-size: 12px;
@@ -79,8 +110,14 @@ const HostContainer = styled.div`
         width: 32px;
         height: 32px;
         margin-left: 10px;
+        border-radius: 30px;
+
+        @media ${device.laptop} {
+            width: 64px;
+            height: 64px;
+        }
     }
-    `
+`
 
 export default function Details() {
     const {id} = useParams();
@@ -106,23 +143,27 @@ export default function Details() {
         <DetailsContainer>
 
             <Slideshow picturesArray={pictures} />
-
-            <h1>{title}</h1>
-
-            <h2>{location}</h2>
-
-            <Tags tagsArray={tags} />
-
+            
             <InfosContainer>
 
-                <Stars starsNumber="5" rating={rating} />
+                <AnnonceContainer>
+                    <h1>{title}</h1>
+
+                    <h2>{location}</h2>
+
+                    <Tags tagsArray={tags} />
+                </AnnonceContainer>
 
                 <HostContainer>
-                    <h3>{hostName}</h3>
+                    <Stars starsNumber="5" rating={rating} />
 
-                    <div>
-                        <img src={hostPicture} alt="alt text" />
-                    </div>
+                    <ProfilContainer>
+                        <h3>{hostName}</h3>
+
+                        <div>
+                            <img src={hostPicture} alt="alt text" />
+                        </div>
+                    </ProfilContainer>
                 </HostContainer>
 
             </InfosContainer>
