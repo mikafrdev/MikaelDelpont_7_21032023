@@ -24,13 +24,12 @@
     }
 
     .aboutsection .collapse {
-        width: 1023px;
+        
     }
 
     .aboutsection .collapse .title {
         height: 47px;
         font-size: 24px;
-        padding: 0 18px;
     }
 
     .aboutsection .collapse .description {

@@ -1,18 +1,13 @@
 import Banner from "../../components/Banner";
-import BannerAboutImg from "../../assets/banner-about.jpg";
 import Collapse from "../../components/Collapse";
 import "./About.css";
 
 export default function About() {
     return (
         <div className="aboutcontainer">
-            <Banner
-                bg={BannerAboutImg}
-                bgSize="cover"
-                bgPosition="unset"
-                height="223px"
-                page="about"
-            />
+
+            <Banner className="aboutbanner" />
+
             <section className="aboutsection">
                 <Collapse title="Fiabilité">
                     Les annonces postées sur Kasa garantissent une fiabilité

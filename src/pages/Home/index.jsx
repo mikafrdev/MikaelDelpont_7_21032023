@@ -3,8 +3,6 @@ import BannerHomeImg from "../../assets/banner-home.jpg";
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
-/*import colors from '../../utils/style/colors'*/
-// import { Link } from 'react-router-dom'
 import products from "../../data/logements.json";
 
 const HomeContainer = styled.div`
@@ -33,7 +31,7 @@ export default function Home() {
 
     return (
         <HomeContainer>
-            <Banner bg={BannerHomeImg} bgSize="auto" bgPosition="-250px -410px" height="111px">
+            <Banner className="homebanner">
                 <h1>Chez vous, partout et ailleurs</h1>
             </Banner>
             <CardCSection>
