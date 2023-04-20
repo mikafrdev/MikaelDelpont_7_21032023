@@ -13,29 +13,6 @@ const DetailsContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-
-    & h1, h2, h3 {
-        color: ${colors.primary};
-    }
-
-    & h1 {
-        font-size: 18px;
-        font-weight: normal;
-        margin: 0;
-        line-height: 25px;
-    }
-
-    & h2 {
-        margin: 5px 0 0 0;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 20px;
-    }
-
-    & h3 {
-        font-size: 18px;
-        font-weight: normal;
-    }
 `
 
 const DetailsSection = styled.section`
@@ -68,6 +45,7 @@ const InfosContainer = styled.div`
 
     @media ${device.laptop} {
         flex-wrap: nowrap;
+        margin: 30px 0 0 0;
     }
 `
 
@@ -75,7 +53,40 @@ const AnnonceContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
-    flex-wrap: nowrap;    
+    flex-wrap: nowrap;
+    
+    & h1, h2, h3 {
+        color: ${colors.primary};
+    }
+
+    & h1 {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 0;
+        line-height: 26px;
+        
+        @media ${device.laptop} {
+            font-size: 36px;
+            line-height: 51px;
+        }
+    }
+
+    & h2 {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 20px;
+
+        @media ${device.laptop} {
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+    
+    & h3 {
+        font-size: 18px;
+        font-weight: normal;
+    }
 
     @media ${device.laptop} {
         
@@ -87,13 +98,13 @@ const HostContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top: 16px;
     
     @media ${device.laptop} {
         flex-direction: column-reverse;
-        flex-wrap: wrap;
-        align-content: flex-end;
-        justify-content: flex-end;
+        align-items: flex-end;
         width: 20%;
+        margin-top: 0;
     }
 `
 
@@ -104,6 +115,12 @@ const ProfilContainer = styled.div`
 
     & h3 {
         font-size: 12px;
+        color: ${colors.primary};
+
+        @media ${device.laptop} {
+            font-size: 18px;
+            line-height: 25px;
+        }
     }
     
     & img {
@@ -117,6 +134,11 @@ const ProfilContainer = styled.div`
             height: 64px;
         }
     }
+`
+
+const HostnameContainer = styled.div`
+    width: min-content;
+    text-align: right;
 `
 
 export default function Details() {
@@ -158,7 +180,9 @@ export default function Details() {
                     <Stars starsNumber="5" rating={rating} />
 
                     <ProfilContainer>
-                        <h3>{hostName}</h3>
+                        <HostnameContainer>
+                            <h3>{hostName}</h3>
+                        </HostnameContainer>
 
                         <div>
                             <img src={hostPicture} alt="alt text" />

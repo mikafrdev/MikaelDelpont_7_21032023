@@ -25,6 +25,10 @@ const CardCSection = styled.section`
         padding: 6px 20px 20px 20px;
         background-color: #F7F7F7;
     }
+
+    @media ${device.kasa} {
+        padding: 6px 0 20px;
+    }
 `
 
 export default function Home() {

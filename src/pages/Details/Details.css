@@ -2,4 +2,17 @@
     .starscontainer {
         align-self: self-end;
     }
+
+    .collapse .title {
+        height: 52px;
+        font-size: 18px;
+        line-height: 26px;
+        border-radius: 10px;
+    }
+
+    .collapse .description {
+        font-size: 18px;
+        line-height: 26px;
+        border-radius: 10px;
+    }
 }

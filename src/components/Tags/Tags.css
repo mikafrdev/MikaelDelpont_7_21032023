@@ -8,11 +8,22 @@
 
 .tagscontainer ul li {
     display: flex;
+    align-items: center;
     margin: 0 10px 0 0;
     padding: 4px 28px;
     border-radius: 5px;
     font-size: 10px;
+    line-height: 15px;
     background-color: #ff6060;
     color: #fff;
     white-space: nowrap;
+}
+
+@media screen and (min-width: 1024px) {
+    .tagscontainer ul li {
+        height: 25px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }

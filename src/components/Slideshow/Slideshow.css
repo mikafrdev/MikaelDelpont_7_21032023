@@ -33,6 +33,9 @@
     transform: translate(0, -50%);
 }
 
+.element-visible { display: block }
+.element-hidden { display: none }
+
 @media screen and (min-width: 1024px) {
     .slideshowcontainer {
         height: 415px;
@@ -41,3 +44,4 @@
         height: 415px;
     }
 }
+

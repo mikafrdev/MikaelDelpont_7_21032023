@@ -1,4 +1,4 @@
-article.collapse {
+.collapse {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,16 +6,16 @@ article.collapse {
     margin-top: 20px;
 }
 
-article.collapse div {
+.collapse div {
     border-radius: 5px;
 }
 
-article.collapse .title, article.collapse .description {
+.collapse .title, .collapse .description {
     width: 94%;
     padding: 0 3%;
 }
 
-article.collapse .title {
+.collapse .title {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -29,7 +29,7 @@ article.collapse .title {
     cursor: pointer;
 }
 
-article.collapse .description {
+.collapse .description {
     display: none;
     padding-top: 20px;
     padding-bottom: 17px;
@@ -40,19 +40,19 @@ article.collapse .description {
     line-height: 150%;
 }
 
-article.collapse .description ul {
+.collapse .description ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-article.collapse .description-active {
+.collapse .description-active {
     display: block;
 }
 
 @media screen and (min-width: 1024px) {
     
-    article.collapse {
+    .collapse {
         width: 80%;
     }
 }
