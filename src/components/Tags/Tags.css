@@ -9,7 +9,7 @@
 .tagscontainer ul li {
     display: flex;
     align-items: center;
-    margin: 0 10px 0 0;
+    margin: 0 10px 10px 0;
     padding: 4px 28px;
     border-radius: 5px;
     font-size: 10px;

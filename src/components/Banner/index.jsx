@@ -1,4 +1,5 @@
 import './Banner.css'
+import PropTypes from "prop-types";
 
 export default function Banner({className, children}) {
 
@@ -8,3 +9,12 @@ export default function Banner({className, children}) {
         </div>
     );
 }
+
+
+Banner.propTypes = {
+    className: PropTypes.string.isRequired
+};
+
+Banner.defaultProps = {
+    className: ""
+};

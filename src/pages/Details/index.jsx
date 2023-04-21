@@ -87,10 +87,6 @@ const AnnonceContainer = styled.div`
         font-size: 18px;
         font-weight: normal;
     }
-
-    @media ${device.laptop} {
-        
-    }
 `
 
 const HostContainer = styled.div`
@@ -98,13 +94,13 @@ const HostContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: 16px;
+    margin-top: 6px;
     
     @media ${device.laptop} {
         flex-direction: column-reverse;
         align-items: flex-end;
-        width: 20%;
-        margin-top: 0;
+        width: 30%;
+        margin: 0 0 10px 0;
     }
 `
 
@@ -153,12 +149,6 @@ export default function Details() {
     const rating = annonce[0].rating;
     const description = annonce[0].description;
     const equipments = annonce[0].equipments;
-
-    //console.log("annonce : ", annonce)
-    //console.log("equipment : ", equipments)
-    // console.log("DETAIL pictures : ", pictures)
-    
-    // {annonce[0].rating.map((item, index) => <PictoStar key={item} tag={item} className="{index}" />)}
 
     return (
         

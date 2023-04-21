@@ -1,6 +1,7 @@
 import React from "react";
 import ArrowSVG from "../../assets/arrow.svg";
 import "./Arrow.css";
+import PropTypes from "prop-types";
 
 export default function Arrow(props) {
     return (
@@ -11,3 +12,13 @@ export default function Arrow(props) {
         ></button>
     );
 }
+
+Arrow.propTypes = {
+    className: PropTypes.string.isRequired,
+    style: PropTypes.string.isRequired
+};
+
+Arrow.defaultProps = {
+    className: "",
+    style: ""
+};

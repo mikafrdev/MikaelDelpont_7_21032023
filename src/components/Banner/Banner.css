@@ -40,6 +40,14 @@
     z-index: 1;
 }
 
+@media screen and (min-width: 768px) {
+    .bannercontainer h1 {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .bannercontainer {
         justify-content: center;
