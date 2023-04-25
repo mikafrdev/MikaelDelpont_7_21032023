@@ -1,20 +1,20 @@
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Products from "../../data/logements.json";
-import Collapse from '../../components/Collapse';
-import Slideshow from '../../components/Slideshow';
-import Tags from '../../components/Tags';
+import Collapse from "../../components/Collapse";
+import Slideshow from "../../components/Slideshow";
+import Tags from "../../components/Tags";
 import Stars from "../../components/Stars";
-import styled from 'styled-components';
-import { device } from '../../utils/style/Devices';
+import styled from "styled-components";
+import { device } from "../../utils/style/Devices";
 import colors from "../../utils/style/colors";
-import './Details.css'
+import "./Details.css";
 
 const DetailsContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-`
+`;
 
 const DetailsSection = styled.section`
     display: flex;
@@ -24,7 +24,7 @@ const DetailsSection = styled.section`
     margin: 0 0 10px 0;
     padding: 6px 0 20px 0;
     border-radius: 25px;
-    background-color: #FFF;
+    background-color: #fff;
 
     @media ${device.laptop} {
         justify-content: space-between;
@@ -32,12 +32,11 @@ const DetailsSection = styled.section`
     }
 
     & article {
-
         @media ${device.laptop} {
             width: 48%;
         }
     }
-`
+`;
 
 const InfosContainer = styled.div`
     display: flex;
@@ -48,15 +47,17 @@ const InfosContainer = styled.div`
         flex-wrap: nowrap;
         margin: 30px 0 0 0;
     }
-`
+`;
 
 const AnnonceContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
     flex-wrap: nowrap;
-    
-    & h1, h2, h3 {
+
+    & h1,
+    h2,
+    h3 {
         color: ${colors.primary};
     }
 
@@ -65,7 +66,7 @@ const AnnonceContainer = styled.div`
         font-weight: normal;
         margin: 0;
         line-height: 26px;
-        
+
         @media ${device.laptop} {
             font-size: 36px;
             line-height: 51px;
@@ -83,12 +84,12 @@ const AnnonceContainer = styled.div`
             line-height: 25px;
         }
     }
-    
+
     & h3 {
         font-size: 18px;
         font-weight: normal;
     }
-`
+`;
 
 const HostContainer = styled.div`
     display: flex;
@@ -96,14 +97,14 @@ const HostContainer = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-top: 6px;
-    
+
     @media ${device.laptop} {
         flex-direction: column-reverse;
         align-items: flex-end;
         width: 30%;
         margin: 0 0 10px 0;
     }
-`
+`;
 
 const ProfilContainer = styled.div`
     display: flex;
@@ -119,7 +120,7 @@ const ProfilContainer = styled.div`
             line-height: 25px;
         }
     }
-    
+
     & img {
         width: 32px;
         height: 32px;
@@ -131,55 +132,33 @@ const ProfilContainer = styled.div`
             height: 64px;
         }
     }
-`
+`;
 
 const HostnameContainer = styled.div`
     width: min-content;
     text-align: right;
-`
+`;
 
 export default function Details() {
-    const {id} = useParams();
-    const annonce = Products.filter(annonce => annonce.id === id);
-    const pictures = annonce[0].pictures;
-    const title = annonce[0].title;
-    const location = annonce[0].location;
-    const tags = annonce[0].tags;
-    const hostName = annonce[0].host.name;
-    const hostPicture = annonce[0].host.picture;
-    const rating = annonce[0].rating;
-    const description = annonce[0].description;
-    const equipments = annonce[0].equipments;
-
-    const [dataLoading, setDataLoading] = useState(false)
-    const [annoncesData, setAnnoncesData] = useState({})
-    const [error, setError] = useState(false)
+    const params = useParams();
+    const [annonce, setAnnonce] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchAnnonces() {
-            setDataLoading(true)
-            try {
-                // console.log(typeof Products)
-                // console.log(typeof "../../data/logements.json")
-                // console.log(JSON.parse(JSON.stringify(Products)))
-                // console.log(JSON.stringify(Products))
-                // console.log("---------------")
-                fetch(Products)
-                .then(res => res.json())
-                .then(json => console.log(json))
-              const test = Products.filter(annonce => annonce.id === id);
-              setAnnoncesData(annoncesData)
-            } catch (err) {
-              console.log("ERREUR : ", err)
-              setError(true)
-            } finally {
-              setDataLoading(false)
-            }
-          }
-          fetchAnnonces()
-        }, [annoncesData, id])
+        let getProduct = false;
+        const product = Products.reduce((prev, cur) => {
+            if (cur.id === params.id) getProduct = cur
+            return getProduct;
+        }, {});
+
+        !product ? navigate("/404") : setAnnonce(product)
+    }, []);
+
+    const {title, location, tags, rating, host, equipments, description, pictures} = annonce
 
     return (
+
+        equipments && (
         
         <DetailsContainer>
 
@@ -200,11 +179,11 @@ export default function Details() {
 
                     <ProfilContainer>
                         <HostnameContainer>
-                            <h3>{hostName}</h3>
+                            <h3>{host.name}</h3>
                         </HostnameContainer>
 
                         <div>
-                            <img src={hostPicture} alt="alt text" />
+                            <img src={host.picture} alt="alt text" />
                         </div>
                     </ProfilContainer>
                 </HostContainer>
@@ -225,5 +204,6 @@ export default function Details() {
             </DetailsSection>
 
         </DetailsContainer>
-    );
+        )
+    )
 }

@@ -15,7 +15,7 @@
 }
 
 .cardImgContainer img {
-    width: 100%;
+    /* width: 100%; */
     display: block;
     border-radius: 10px;
 }
@@ -41,14 +41,20 @@
     color: #fff;
 }
 
+.cardcontainer,
+    .cardImgContainer,
+    .cardImgContainer img {
+        /* height: 255px; */
+    }
+
 @media screen and (min-width: 1024px) {
     .cardcontainer,
     .cardImgContainer,
     .cardImgContainer img {
-        height: 326px;
+        /* height: 326px; */
     }
     .cardcontainer {
-        width: 46%;
+        /* width: 46%; */
         margin: 25px 2%;
     }
 }
@@ -57,16 +63,16 @@
     .cardcontainer,
     .cardImgContainer,
     .cardImgContainer img {
-        height: 340px;
+        /* height: 340px; */
     }
 
     .cardcontainer {
-        width: auto;
+        /* width: auto; */
         margin: 25px 30px;
         border-radius: 25px;
     }
 
     .cardImgContainer img {
-        width: 340px;
+        /* width: 340px; */
     }
 }

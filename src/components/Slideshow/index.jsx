@@ -3,6 +3,7 @@ import "./Slideshow.css";
 import Arrow from "../Arrow/";
 
 export default function Slideshow({ picturesArray }) {
+    
     const [index, setindex] = useState(0);
     const [showArrow, setshowArrow] = useState(false);
     const indexMax = picturesArray.length - 1;
