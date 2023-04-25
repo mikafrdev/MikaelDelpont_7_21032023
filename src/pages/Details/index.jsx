@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
-import products from "../../data/logements.json";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Products from "../../data/logements.json";
 import Collapse from '../../components/Collapse';
 import Slideshow from '../../components/Slideshow';
 import Tags from '../../components/Tags';
@@ -139,7 +140,7 @@ const HostnameContainer = styled.div`
 
 export default function Details() {
     const {id} = useParams();
-    const annonce = products.filter(annonce => annonce.id === id);
+    const annonce = Products.filter(annonce => annonce.id === id);
     const pictures = annonce[0].pictures;
     const title = annonce[0].title;
     const location = annonce[0].location;
@@ -149,6 +150,34 @@ export default function Details() {
     const rating = annonce[0].rating;
     const description = annonce[0].description;
     const equipments = annonce[0].equipments;
+
+    const [dataLoading, setDataLoading] = useState(false)
+    const [annoncesData, setAnnoncesData] = useState({})
+    const [error, setError] = useState(false)
+
+    useEffect(() => {
+        async function fetchAnnonces() {
+            setDataLoading(true)
+            try {
+                // console.log(typeof Products)
+                // console.log(typeof "../../data/logements.json")
+                // console.log(JSON.parse(JSON.stringify(Products)))
+                // console.log(JSON.stringify(Products))
+                // console.log("---------------")
+                fetch(Products)
+                .then(res => res.json())
+                .then(json => console.log(json))
+              const test = Products.filter(annonce => annonce.id === id);
+              setAnnoncesData(annoncesData)
+            } catch (err) {
+              console.log("ERREUR : ", err)
+              setError(true)
+            } finally {
+              setDataLoading(false)
+            }
+          }
+          fetchAnnonces()
+        }, [annoncesData, id])
 
     return (
         

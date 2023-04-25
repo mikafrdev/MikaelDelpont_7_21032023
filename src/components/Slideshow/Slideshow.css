@@ -33,12 +33,27 @@
     transform: translate(0, -50%);
 }
 
+.pagination {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
     .slideshowcontainer {
         height: 415px;
     }
     .slideshowcontainer img {
         height: 415px;
+    }
+
+    .pagination {
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 25px;
+        width: 24px;
+        font-size: 18px;
+        text-align: center;
+        color: #FFF;
     }
 }
 

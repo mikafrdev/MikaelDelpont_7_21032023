@@ -9,7 +9,7 @@ export default function Slideshow({ picturesArray }) {
 
     useEffect(() => {
         if (indexMax > 0) setshowArrow(true);
-    }, []);
+    }, [indexMax]);
 
     const navPrevious = () => {
         index > 0 ? setindex(index - 1) : setindex(indexMax);
@@ -30,6 +30,8 @@ export default function Slideshow({ picturesArray }) {
             )}
 
             <img src={`${picturesArray[index]}`} alt="TEST" />
+
+            {showArrow ? (<div className="pagination">{index + 1}/{indexMax + 1}</div>) : ("")}
 
             {showArrow ? (
             <div className="navright" onClick={() => navNext()}>

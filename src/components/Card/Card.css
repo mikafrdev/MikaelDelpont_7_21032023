@@ -42,6 +42,11 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .cardcontainer,
+    .cardImgContainer,
+    .cardImgContainer img {
+        height: 326px;
+    }
     .cardcontainer {
         width: 46%;
         margin: 25px 2%;
