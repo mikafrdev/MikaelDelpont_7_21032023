@@ -24,7 +24,6 @@ const DetailsSection = styled.section`
     margin: 0 0 10px 0;
     padding: 6px 0 20px 0;
     border-radius: 25px;
-    background-color: ${colors.bg_detail};
 
     @media ${device.laptop} {
         justify-content: space-between;
