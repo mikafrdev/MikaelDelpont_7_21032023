@@ -1,7 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import "./fonts/Montserrat/Montserrat-VariableFont_wght.ttf";
-import Arrow from "../../assets/arrow.svg";
 
 const StyledGlobalStyle = createGlobalStyle`
 

@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from "react-router-dom";
 import styled from 'styled-components'
-import { device } from '../../utils/style/Devices';
+import colors from "../../utils/style/colors";
+import PropTypes from "prop-types";
 
 const LogoContainer = styled.div`
     display: flex;
@@ -28,3 +28,11 @@ export default function Logo({color}) {
             </LogoContainer>
     )
 }
+
+Logo.propTypes = {
+    color: PropTypes.string
+};
+
+Logo.defaultProps = {
+    color: colors.primary
+};

@@ -14,11 +14,9 @@ export default function Arrow(props) {
 }
 
 Arrow.propTypes = {
-    className: PropTypes.string.isRequired,
-    style: PropTypes.string.isRequired
+    className: PropTypes.string.isRequired
 };
 
 Arrow.defaultProps = {
-    className: "",
-    style: ""
+    className: "arrowup"
 };

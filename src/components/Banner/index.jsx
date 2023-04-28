@@ -10,11 +10,7 @@ export default function Banner({className, children}) {
     );
 }
 
-
 Banner.propTypes = {
-    className: PropTypes.string.isRequired
-};
-
-Banner.defaultProps = {
-    className: ""
+    className: PropTypes.string,
+    children: PropTypes.node
 };

@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import "./Slideshow.css";
 import Arrow from "../Arrow/";
+import PropTypes from "prop-types";
 
 export default function Slideshow({ picturesArray }) {
     
     const [index, setindex] = useState(0);
-    const [showArrow, setshowArrow] = useState(false);
+    const [showArrow, setShowArrow] = useState(false);
     const indexMax = picturesArray.length - 1;
 
     useEffect(() => {
-        if (indexMax > 0) setshowArrow(true);
+        if (indexMax > 0) setShowArrow(true);
     }, [indexMax]);
 
     const navPrevious = () => {
@@ -44,3 +45,7 @@ export default function Slideshow({ picturesArray }) {
         </div>
     );
 }
+
+Slideshow.propTypes = {
+    picturesArray: PropTypes.arrayOf(PropTypes.string)
+};

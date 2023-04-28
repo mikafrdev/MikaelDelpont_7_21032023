@@ -2,6 +2,7 @@ import Banner from '../../components/Banner'
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import { device } from '../../utils/style/Devices';
+import colors from "../../utils/style/colors";
 import products from "../../data/logements.json";
 
 const HomeContainer = styled.div`
@@ -17,12 +18,11 @@ const CardCSection = styled.section`
     justify-content: center;
     margin: 22px 0;
     border-radius: 25px;
-    background-color: #FFF;
 
     @media ${device.tablet} {
         justify-content: space-between;
         padding: 6px 20px 20px 20px;
-        background-color: #F7F7F7;
+        background-color: ${colors.bg_cards_container};
     }
 
     @media ${device.kasa} {

@@ -22,9 +22,3 @@ Card.propTypes = {
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired
 };
-
-Card.defaultProps = {
-    id:  "",
-    title: "",
-    cover: ""
-};

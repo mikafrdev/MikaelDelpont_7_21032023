@@ -10,10 +10,10 @@ const FooterContainer = styled.footer`
   align-content: center;
   justify-content: center;
   height: 210px;
-  background-color: ${colors.backgroundFooter};
+  background-color: ${colors.bg_Footer};
 
   & .copyright {
-    color: #FFF;
+    color: ${colors.copyright};
     margin-top: 15px;
     @media ${device.mobile} {
       font-size: 3.5vw;
@@ -27,7 +27,7 @@ const FooterContainer = styled.footer`
 export default function Footer() {
   return (
     <FooterContainer>
-      <Logo color={colors.secondary} />
+      <Logo color={colors.tertiary} />
       <div className="copyright">© 2020 Kasa. All rights reserved</div>
     </FooterContainer>
   )

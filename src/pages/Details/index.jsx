@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Products from "../../data/logements.json";
 import Collapse from "../../components/Collapse";
@@ -24,7 +24,7 @@ const DetailsSection = styled.section`
     margin: 0 0 10px 0;
     padding: 6px 0 20px 0;
     border-radius: 25px;
-    background-color: #fff;
+    background-color: ${colors.bg_detail};
 
     @media ${device.laptop} {
         justify-content: space-between;
@@ -144,6 +144,8 @@ export default function Details() {
     const [annonce, setAnnonce] = useState({});
     const navigate = useNavigate();
 
+    const {title, location, tags, rating, host, equipments, description, pictures} = annonce
+
     useEffect(() => {
         let getProduct = false;
         const product = Products.reduce((prev, cur) => {
@@ -152,9 +154,7 @@ export default function Details() {
         }, {});
 
         !product ? navigate("/404") : setAnnonce(product)
-    }, []);
-
-    const {title, location, tags, rating, host, equipments, description, pictures} = annonce
+    }, [navigate, params.id]);
 
     return (
 
@@ -175,7 +175,7 @@ export default function Details() {
                 </AnnonceContainer>
 
                 <HostContainer>
-                    <Stars starsNumber="5" rating={rating} />
+                    <Stars starsNumber={5} rating={parseInt(rating)} />
 
                     <ProfilContainer>
                         <HostnameContainer>

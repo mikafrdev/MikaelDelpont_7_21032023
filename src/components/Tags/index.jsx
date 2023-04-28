@@ -1,4 +1,4 @@
-import PropTypes, { array } from 'prop-types'
+import PropTypes from 'prop-types'
 import './Tags.css'
 
 export default function Tags({tagsArray}) {
@@ -13,9 +13,5 @@ export default function Tags({tagsArray}) {
 }
 
 Tags.propTypes = {
-    tagName: PropTypes.string.isRequired
-}
-  
-Tags.defaultProps = {
-    tagName: ''
+    tagsArray: PropTypes.arrayOf(PropTypes.string)
 }
