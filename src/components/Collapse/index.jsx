@@ -4,7 +4,7 @@ import Arrow from "../Arrow/";
 import PropTypes from "prop-types";
 
 export default function Collapse({ title, children }) {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -14,10 +14,10 @@ export default function Collapse({ title, children }) {
         <article className="collapse">
             <div className="title" onClick={() => handleClick()}>
                 {title}
-                <Arrow className={`arrowup ${isOpen ? "" : "arrowdown"}`} />
+                <Arrow className={`arrowdown ${isOpen ? "arrowup" : ""}`} />
             </div>
 
-            <div className={`description ${isOpen ? "" : "description-active"}`}>{children}</div>
+            <div className={`description ${isOpen ? "description-active" : ""}`}>{children}</div>
         </article>
     );
 }

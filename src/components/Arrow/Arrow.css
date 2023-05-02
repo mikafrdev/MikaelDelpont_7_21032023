@@ -10,7 +10,7 @@
     transition-duration: .3s;
 }
 
-.arrowup {
+.arrowdown {
     transform: rotate(0deg);
 }
 
@@ -22,6 +22,6 @@
     transform: rotate(270deg);
 }
 
-.arrowdown {
+.arrowup {
     transform: rotate(180deg);
 }

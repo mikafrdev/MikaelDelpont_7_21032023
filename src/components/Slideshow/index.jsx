@@ -31,14 +31,14 @@ export default function Slideshow({ picturesArray }) {
                 ""
             )}
 
-            <img src={`${picturesArray[index]}`} alt="TEST" />
+            <img src={`${picturesArray[index]}`} alt="alt text" />
 
             {showArrow ? (<div className="pagination">{index + 1}/{indexMax + 1}</div>) : ("")}
 
             {showArrow ? (
-            <div className="navright" onClick={() => navNext()}>
-                <Arrow className="arrowright" />
-            </div>
+                <div className="navright" onClick={() => navNext()}>
+                    <Arrow className="arrowright" />
+                </div>
             ) : (
                 ""
             )}
