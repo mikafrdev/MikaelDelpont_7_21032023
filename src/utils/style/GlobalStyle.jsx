@@ -1,22 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import "./fonts/Montserrat/Montserrat-VariableFont_wght.ttf";
 
 const StyledGlobalStyle = createGlobalStyle`
-
-  @font-face {
-    font-family: 'Montserrat-400';
-    src: url("../style/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Montserrat-500';
-    src: url("../style/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-  }
 
   body {
     margin: 0;
