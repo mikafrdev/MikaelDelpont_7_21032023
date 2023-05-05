@@ -5,7 +5,7 @@ const colors = {
     copyright: "#FFF",
     headerLinks: "#FF6060",
     bg_Footer: "#000",
-    bg_cards_container: "#FFF",
+    bg_cards_container: "#F6F6F6",
 };
 
 export default colors;

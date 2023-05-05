@@ -1,7 +1,7 @@
 .cardcontainer {
     position: relative;
     width: 100%;
-    margin: 4% 0;
+    margin-top: 20px;
     border-radius: 10px;
     color: #fff;
 }
@@ -59,14 +59,15 @@
     }
     .cardcontainer {
         width: 46%;
-        margin: 25px 2%;
+        margin: 25px 0;
     }
 }
 
 @media screen and (min-width: 1240px) {
     .cardcontainer {
+        justify-content: center;
         width: auto;
-        margin: 25px 30px;
+        margin: 25px 0;
         border-radius: 25px;
     }
     .cardImgContainer img {

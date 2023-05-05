@@ -16,12 +16,12 @@ const CardCSection = styled.section`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 22px 0;
+    margin-bottom: 20px;
     border-radius: 25px;
 
-    @media ${device.tablet} {
-        justify-content: center;
-        padding: 6px 20px 20px 20px;
+    @media ${device.laptop} {
+        margin: 43px 0;
+        justify-content: space-evenly;
         background-color: ${colors.bg_cards_container};
     }
 
