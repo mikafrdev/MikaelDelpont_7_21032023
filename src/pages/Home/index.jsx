@@ -20,7 +20,7 @@ const CardCSection = styled.section`
     border-radius: 25px;
 
     @media ${device.tablet} {
-        justify-content: space-between;
+        justify-content: center;
         padding: 6px 20px 20px 20px;
         background-color: ${colors.bg_cards_container};
     }
